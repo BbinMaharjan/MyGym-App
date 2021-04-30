@@ -15,7 +15,11 @@ const Tab = createBottomTabNavigator();
 const MainStackNavigator = () => {
   return (
     <MainStack.Navigator>
-      <MainStack.Screen name="Wellcome" component={WellcomeScreen} />
+      <MainStack.Screen
+        name="Wellcome"
+        component={WellcomeScreen}
+        options={{headerShown: false}}
+      />
       <MainStack.Screen name="Home" component={TabNavigator} />
     </MainStack.Navigator>
   );
