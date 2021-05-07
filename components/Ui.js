@@ -1,12 +1,60 @@
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Input, Button} from 'react-native-elements';
+import color from '../constant/color';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+const NavHeading = props => {
+  return (
+    <View style={styles.navheading}>
+      <View
+        style={{
+          ...styles.iconContainer,
+          top: 5,
+          left: 5,
+          height: 40,
+          width: 40,
+        }}>
+        <Icon
+          name={props.iname}
+          size={25}
+          color="white"
+          onPress={props.onclick}
+        />
+      </View>
+      <Text style={styles.navtext}>{props.title}</Text>
+      <View
+        style={{
+          ...styles.iconContainer,
+          backgroundColor: color.lightRed,
+          top: 5,
+          left: 15,
+          height: 40,
+          width: 40,
+        }}>
+        <Icon name={props.riname} size={30} color="white" />
+      </View>
+    </View>
+  );
+};
 
 const CardView = props => {
   return (
     <View style={{...styles.CardView, backgroundColor: props.color}}>
-      <Image source={props.imagesource} style={styles.image} />
-      <Text style={{color: 'white', fontSize: 20}}>{props.title}</Text>
+      <TouchableOpacity onPress={props.onPress}>
+        <Image source={props.imagesource} style={styles.image} />
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 18,
+            textAlign: 'center',
+            top: 5,
+            fontFamily: 'Oxygen-Regular',
+          }}>
+          {props.title}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -50,7 +98,7 @@ const Title = props => {
     <View>
       <Text style={styles.title}>{props.title}</Text>
       <Text style={styles.subtitle}>{props.subtitle}</Text>
-      <Text numberOfLines={3} ellipsizeMode="tail" style={styles.info}>
+      <Text numberOfLines={5} ellipsizeMode="tail" style={styles.info}>
         {props.info}
       </Text>
     </View>
@@ -58,20 +106,50 @@ const Title = props => {
 };
 
 const styles = StyleSheet.create({
-  //card style
-  CardView: {
-    width: '48%',
-    height: 200,
-    borderRadius: 30,
-    padding: 20,
+  //navheading
+  navheading: {
+    width: '100%',
+    height: 50,
+    backgroundColor: color.lightRed,
+    position: 'absolute',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  iconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: color.lightRed,
     alignItems: 'center',
     justifyContent: 'center',
+    marginRight: 20,
+    borderColor: color.lightYellow,
+    borderWidth: 1,
+  },
+  navtext: {
+    fontSize: 30,
+    color: 'white',
+    marginLeft: 30,
+    textAlign: 'center',
+    letterSpacing: 2,
+    fontFamily: 'Girassol-Regular',
+  },
+
+  //card style
+  CardView: {
+    width: '40%',
+    height: 150,
+    borderRadius: 30,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: 'gray',
+    borderWidth: 2,
   },
   image: {
     flex: 1,
     width: 200,
     height: 200,
-    borderRadius: 50,
     resizeMode: 'contain',
   },
   //input style
@@ -99,21 +177,24 @@ const styles = StyleSheet.create({
   },
   //Title
   title: {
-    fontFamily: 'Oxygen-Bold',
+    fontFamily: 'Girassol-Regular',
     fontSize: 30,
     color: 'white',
-    letterSpacing: 2,
+    letterSpacing: 4,
   },
   subtitle: {
-    fontFamily: 'Oxygen-Regular',
+    fontFamily: 'Girassol-Regular',
     fontSize: 25,
     color: 'gray',
+    letterSpacing: 3,
   },
   info: {
     fontFamily: 'Oxygen-Light',
-    fontSize: 15,
+    fontSize: 16,
     color: 'gray',
+    marginTop: 10,
+    justifyContent: 'center',
   },
 });
 
-export {CardView, InputText, CustomButton, Title};
+export {NavHeading, CardView, InputText, CustomButton, Title};

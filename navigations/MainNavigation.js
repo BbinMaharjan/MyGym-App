@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen';
 import AddMemberScreen from '../screens/AddMemberScreen';
 import ViewMemberScreen from '../screens/ViewMemberScreen';
 import PaymentScreen from '../screens/PaymentScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const MainStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -20,7 +21,11 @@ const MainStackNavigator = () => {
         component={WellcomeScreen}
         options={{headerShown: false}}
       />
-      <MainStack.Screen name="Home" component={TabNavigator} />
+      <MainStack.Screen
+        name="Home"
+        component={TabNavigator}
+        options={{headerShown: false}}
+      />
     </MainStack.Navigator>
   );
 };
@@ -68,8 +73,21 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="MemberScreen"
+        name="Members"
         component={ViewMemberScreen}
+        options={{
+          tabBarIcon: props => (
+            <Icon
+              name="home"
+              color={props.color}
+              size={props.focused ? props.size * 1.3 : props.size}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
         options={{
           tabBarIcon: props => (
             <Icon

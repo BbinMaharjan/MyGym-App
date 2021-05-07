@@ -32,14 +32,14 @@ const WellcomeScreen = props => {
         <Title
           title="Wellcome"
           subtitle="Hello There!!!"
-          info="Wellcome To Gym Application ..Wellcome To Gym Application ..
-          Wellcome To Gym Application ..Wellcome To Gym Application ..
-          Wellcome To Gym Application .. Wellcome To Gym Application ..
-          Wellcome To Gym Application ..Wellcome To Gym Application ..
-          Wellcome To Gym Application ..Wellcome To Gym Application ..
+          info="Wellcome To Gym Application. This App Help To Add New Gym Member In Real Time Database Firebase.This App User Can Also  View Member Profile.
+          App User Can Also Search The Gym Memeber. 
         "
         />
       </View>
+      <TouchableOpacity onPress={HomeScreen}>
+        <Text style={styles.next}>Next </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -57,6 +57,14 @@ const styles = StyleSheet.create({
   title: {
     padding: 10,
     marginBottom: 10,
+  },
+  next: {
+    fontFamily: 'Girassol-Regular',
+    color: 'white',
+    fontSize: 50,
+    letterSpacing: 3,
+    marginLeft: 250,
+    marginTop: 50,
   },
 });
 export default WellcomeScreen;

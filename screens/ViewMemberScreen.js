@@ -1,40 +1,70 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {MemberUi} from '../components/listmemberUi';
+import {NavHeading} from '../components/Ui';
 
 const ViewMemberScreen = props => {
   return (
-    <View>
-      <View style={styles.listview}>
-        <View style={styles.imagess}>
-          <Text>Image</Text>
-        </View>
-        <View style={styles.textss}>
-          <Text>TextView</Text>
-        </View>
+    <SafeAreaView style={styles.screen}>
+      <View style={styles.headerss}>
+        <NavHeading iname="bars" riname="home" title="Members" />
       </View>
-    </View>
+      <View style={styles.mainss}>
+        <ScrollView style={{backgroundColor: 'white'}}>
+          <MemberUi
+            membershipno="001"
+            fullname="Bibin Maharjan"
+            mobile="9843-xxxxxxx"
+            expiredate="2021/12/10"
+          />
+          <MemberUi
+            membershipno="001"
+            fullname="Bibin Maharjan"
+            mobile="9843-xxxxxxx"
+            expiredate="2021/12/10"
+          />
+          <MemberUi
+            membershipno="001"
+            fullname="Bibin Maharjan"
+            mobile="9843-xxxxxxx"
+            expiredate="2021/12/10"
+          />
+          <MemberUi
+            membershipno="001"
+            fullname="Bibin Maharjan"
+            mobile="9843-xxxxxxx"
+            expiredate="2021/12/10"
+          />
+
+          <MemberUi
+            membershipno="001"
+            fullname="Bibin Maharjan"
+            mobile="9843-xxxxxxx"
+            expiredate="2021/12/10"
+          />
+
+          <MemberUi
+            membershipno="001"
+            fullname="Bibin Maharjan"
+            mobile="9843-xxxxxxx"
+            expiredate="2021/12/10"
+          />
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  listview: {
-    width: '95%',
-    height: 100,
-    margin: 10,
-    padding: 2,
-    backgroundColor: 'skyblue',
-    flexDirection: 'row',
-  },
-  imagess: {
+  screen: {
     flex: 1,
-    backgroundColor: 'red',
-    margin: 3,
   },
-  textss: {
-    flex: 2,
+  headerss: {
+    flex: 1,
     backgroundColor: 'green',
-    margin: 3,
-    padding: 5,
+  },
+  mainss: {
+    flex: 10,
   },
 });
 export default ViewMemberScreen;

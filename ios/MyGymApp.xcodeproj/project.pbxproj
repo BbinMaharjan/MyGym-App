@@ -47,6 +47,10 @@
 		7BD4398E81C74C6ABE55904A /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 402AD327A8264A4B949B9A4C /* Octicons.ttf */; };
 		996761EE31A24DACBCD3B863 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17366B65283F493ABA8E2840 /* SimpleLineIcons.ttf */; };
 		C3CB6C29629349F39EEB9B59 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856501B78F79440888214A26 /* Zocial.ttf */; };
+		4ADBCC5C47004E0BBF43CD33 /* Girassol-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3930A7D3E4DD4AA8AE376A1C /* Girassol-Regular.ttf */; };
+		AB93ECF7F5774B6DBF19491C /* Oxygen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16DF60626171403BA5484BEF /* Oxygen-Bold.ttf */; };
+		0D19CC5421CF4DE3B06C97E7 /* Oxygen-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF0C0F491F3E40B6935ABA24 /* Oxygen-Light.ttf */; };
+		CC6C28D711114169B0E20E97 /* Oxygen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C0A3E0B1F4724B55FAD05 /* Oxygen-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,10 @@
 		402AD327A8264A4B949B9A4C /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		17366B65283F493ABA8E2840 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		856501B78F79440888214A26 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3930A7D3E4DD4AA8AE376A1C /* Girassol-Regular.ttf */ = {isa = PBXFileReference; name = "Girassol-Regular.ttf"; path = "../assets/fonts/Girassol-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		16DF60626171403BA5484BEF /* Oxygen-Bold.ttf */ = {isa = PBXFileReference; name = "Oxygen-Bold.ttf"; path = "../assets/fonts/Oxygen-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF0C0F491F3E40B6935ABA24 /* Oxygen-Light.ttf */ = {isa = PBXFileReference; name = "Oxygen-Light.ttf"; path = "../assets/fonts/Oxygen-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C3C0A3E0B1F4724B55FAD05 /* Oxygen-Regular.ttf */ = {isa = PBXFileReference; name = "Oxygen-Regular.ttf"; path = "../assets/fonts/Oxygen-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +241,10 @@
 				402AD327A8264A4B949B9A4C /* Octicons.ttf */,
 				17366B65283F493ABA8E2840 /* SimpleLineIcons.ttf */,
 				856501B78F79440888214A26 /* Zocial.ttf */,
+				3930A7D3E4DD4AA8AE376A1C /* Girassol-Regular.ttf */,
+				16DF60626171403BA5484BEF /* Oxygen-Bold.ttf */,
+				BF0C0F491F3E40B6935ABA24 /* Oxygen-Light.ttf */,
+				7C3C0A3E0B1F4724B55FAD05 /* Oxygen-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -363,6 +375,10 @@
 				7BD4398E81C74C6ABE55904A /* Octicons.ttf in Resources */,
 				996761EE31A24DACBCD3B863 /* SimpleLineIcons.ttf in Resources */,
 				C3CB6C29629349F39EEB9B59 /* Zocial.ttf in Resources */,
+				4ADBCC5C47004E0BBF43CD33 /* Girassol-Regular.ttf in Resources */,
+				AB93ECF7F5774B6DBF19491C /* Oxygen-Bold.ttf in Resources */,
+				0D19CC5421CF4DE3B06C97E7 /* Oxygen-Light.ttf in Resources */,
+				CC6C28D711114169B0E20E97 /* Oxygen-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
