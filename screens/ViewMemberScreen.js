@@ -3,7 +3,27 @@ import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import {MemberUi} from '../components/listmemberUi';
 import {NavHeading} from '../components/Ui';
 
+import {useDispatch, useSelector} from 'react-redux';
+
+import {getAllMembers} from '../store/actions/members';
+
 const ViewMemberScreen = props => {
+  const [visible, setVisible] = React.useState(false);
+  const showModal = () => setVisible(true);
+
+  const [selectedMemberId, setSelectedMemberId] = React.useState('');
+  const dispatch = useDispatch();
+  const members = useSelector(state => state.membersState.members);
+
+  React.useEffect(() => {
+    dispatch(getAllMembers());
+  }, []);
+
+  const handleListTap = id => {
+    props.navigation.navigate('Profile');
+    setSelectedMemberId(id);
+  };
+
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.headerss}>
@@ -11,44 +31,18 @@ const ViewMemberScreen = props => {
       </View>
       <View style={styles.mainss}>
         <ScrollView style={{backgroundColor: 'white'}}>
-          <MemberUi
-            membershipno="001"
-            fullname="Bibin Maharjan"
-            mobile="9843-xxxxxxx"
-            expiredate="2021/12/10"
-          />
-          <MemberUi
-            membershipno="001"
-            fullname="Bibin Maharjan"
-            mobile="9843-xxxxxxx"
-            expiredate="2021/12/10"
-          />
-          <MemberUi
-            membershipno="001"
-            fullname="Bibin Maharjan"
-            mobile="9843-xxxxxxx"
-            expiredate="2021/12/10"
-          />
-          <MemberUi
-            membershipno="001"
-            fullname="Bibin Maharjan"
-            mobile="9843-xxxxxxx"
-            expiredate="2021/12/10"
-          />
-
-          <MemberUi
-            membershipno="001"
-            fullname="Bibin Maharjan"
-            mobile="9843-xxxxxxx"
-            expiredate="2021/12/10"
-          />
-
-          <MemberUi
-            membershipno="001"
-            fullname="Bibin Maharjan"
-            mobile="9843-xxxxxxx"
-            expiredate="2021/12/10"
-          />
+          {members.map(member => {
+            return (
+              <MemberUi
+                key={member.id}
+                fullname={member.fullname}
+                mobile={member.mobile}
+                expiredate={member.joiningdate}
+                membershipno={member.membershipno}
+                onPress={() => handleListTap(member.id)}
+              />
+            );
+          })}
         </ScrollView>
       </View>
     </SafeAreaView>

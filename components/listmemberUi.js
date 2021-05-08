@@ -1,34 +1,37 @@
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 const MemberUi = props => {
   return (
-    <View style={styles.listview}>
-      <View style={styles.imagess}>
-        <Image
-          style={styles.image}
-          source={require('../assets/images/gymzs.png')}
-        />
+    <TouchableOpacity onPress={props.onPress}>
+      <View style={styles.listview}>
+        <View style={styles.imagess}>
+          <Image
+            style={styles.image}
+            source={require('../assets/images/gymzs.png')}
+          />
+        </View>
+        <View style={styles.textss}>
+          <View style={styles.ctext}>
+            <Text style={styles.text}>MemberShip No :</Text>
+            <Text style={styles.texti}> {props.membershipno}</Text>
+          </View>
+          <View style={styles.ctext}>
+            <Text style={styles.text}>Full Name :</Text>
+            <Text style={styles.texti}> {props.fullname}</Text>
+          </View>
+          <View style={styles.ctext}>
+            <Text style={styles.text}>Mobile :</Text>
+            <Text style={styles.texti}> {props.mobile}</Text>
+          </View>
+          <View style={styles.ctext}>
+            <Text style={styles.text}>Expire Date :</Text>
+            <Text style={styles.texti}> {props.expiredate}</Text>
+          </View>
+        </View>
       </View>
-      <View style={styles.textss}>
-        <View style={styles.ctext}>
-          <Text style={styles.text}>MemberShip No :</Text>
-          <Text style={styles.texti}> {props.membershipno}</Text>
-        </View>
-        <View style={styles.ctext}>
-          <Text style={styles.text}>Full Name :</Text>
-          <Text style={styles.texti}> {props.fullname}</Text>
-        </View>
-        <View style={styles.ctext}>
-          <Text style={styles.text}>Mobile :</Text>
-          <Text style={styles.texti}> {props.mobile}</Text>
-        </View>
-        <View style={styles.ctext}>
-          <Text style={styles.text}>Expire Date :</Text>
-          <Text style={styles.texti}> {props.expiredate}</Text>
-        </View>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

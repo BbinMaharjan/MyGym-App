@@ -69,6 +69,8 @@ const InputText = props => {
         inputStyle={styles.insty}
         inputContainerStyle={styles.incosty}
         labelStyle={styles.labsty}
+        value={props.value}
+        onChangeText={props.onChangeText}
       />
     </View>
   );
@@ -89,6 +91,7 @@ const CustomButton = props => {
           margin: 5,
           borderRadius: 20,
         }}
+        onPress={props.onPress}
       />
     </View>
   );

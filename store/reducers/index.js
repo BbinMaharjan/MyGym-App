@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 import configReducer from './config';
-import todosReducer from './todos';
+import membersReducer from './members';
 
 const reducers = combineReducers({
-  todosState: todosReducer,
+  membersState: membersReducer,
   configState: configReducer,
 });
 

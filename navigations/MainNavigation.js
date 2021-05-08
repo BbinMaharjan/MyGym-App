@@ -52,7 +52,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: props => (
             <Icon
-              name="home"
+              name="user-plus"
               color={props.color}
               size={props.focused ? props.size * 1.3 : props.size}
             />
@@ -65,7 +65,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: props => (
             <Icon
-              name="home"
+              name="paypal"
               color={props.color}
               size={props.focused ? props.size * 1.3 : props.size}
             />
@@ -78,7 +78,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: props => (
             <Icon
-              name="home"
+              name="users"
               color={props.color}
               size={props.focused ? props.size * 1.3 : props.size}
             />
@@ -91,7 +91,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: props => (
             <Icon
-              name="home"
+              name="address-card"
               color={props.color}
               size={props.focused ? props.size * 1.3 : props.size}
             />

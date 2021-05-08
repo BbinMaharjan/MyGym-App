@@ -1,5 +1,5 @@
 const initialState = {
-  baseURL: 'https://react-native-7346a-default-rtdb.firebaseio.com',
+  baseURL: 'https://mygym-reactnative-default-rtdb.firebaseio.com/',
 };
 
 const configReducer = (state = initialState, action) => {
