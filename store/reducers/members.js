@@ -1,7 +1,8 @@
-import {ADD_MEMBERS, GET_MEMBERS} from '../actions/members';
+import {ADD_MEMBERS, GET_MEMBERS, GET_ONE_MEMBER} from '../actions/members';
 
 const initialState = {
   members: [],
+  member: {},
 };
 
 const membersReducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const membersReducer = (state = initialState, action) => {
       return {
         ...state,
         members: action.payload,
+      };
+
+    case GET_ONE_MEMBER:
+      return {
+        ...state,
+        member: action.payload,
       };
 
     default:

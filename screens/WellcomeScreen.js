@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import {FAB} from 'react-native-paper';
+
 import {Title} from '../components/Ui';
 
 const WellcomeScreen = props => {
@@ -40,6 +42,13 @@ const WellcomeScreen = props => {
       <TouchableOpacity onPress={HomeScreen}>
         <Text style={styles.next}>Next </Text>
       </TouchableOpacity>
+      <FAB
+        style={styles.fab}
+        icon="home"
+        label="NEXT"
+        onPress={HomeScreen}
+        color="white"
+      />
     </SafeAreaView>
   );
 };
@@ -63,8 +72,18 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 50,
     letterSpacing: 3,
-    marginLeft: 250,
-    marginTop: 50,
+    right: 1,
+    bottom: 0,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'red',
+    borderColor: 'gray',
+    borderWidth: 4,
+    shadowColor: 'blue',
   },
 });
 export default WellcomeScreen;

@@ -19,9 +19,8 @@ const ViewMemberScreen = props => {
     dispatch(getAllMembers());
   }, []);
 
-  const handleListTap = id => {
-    props.navigation.navigate('Profile');
-    setSelectedMemberId(id);
+  const handleListTap = memberid => {
+    props.navigation.navigate('Profile', {memberid});
   };
 
   return (
@@ -39,7 +38,9 @@ const ViewMemberScreen = props => {
                 mobile={member.mobile}
                 expiredate={member.joiningdate}
                 membershipno={member.membershipno}
-                onPress={() => handleListTap(member.id)}
+                onPress={() => {
+                  handleListTap(member.id);
+                }}
               />
             );
           })}
