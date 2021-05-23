@@ -37,6 +37,7 @@ const MemberUi = props => {
 
 const styles = StyleSheet.create({
   listview: {
+    flex: 1,
     width: '100%',
     height: 100,
     marginBottom: 3,
@@ -47,7 +48,6 @@ const styles = StyleSheet.create({
     borderColor: 'yellow',
     borderRightWidth: 3,
     borderBottomWidth: 3,
-    overflow: 'hidden',
   },
   imagess: {
     flex: 1,
@@ -67,6 +67,8 @@ const styles = StyleSheet.create({
     flex: 2,
     margin: 3,
     padding: 5,
+    bottom: 0,
+    overflow: 'hidden',
   },
   ctext: {
     flexDirection: 'row',

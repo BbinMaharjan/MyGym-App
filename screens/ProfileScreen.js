@@ -5,6 +5,7 @@ import {NavHeading} from '../components/Ui';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {getOneMembers} from '../store/actions/members';
+import ProfileUi from '../components/profileUi';
 
 const ProfileScreen = ({route}) => {
   const {
@@ -39,35 +40,55 @@ const ProfileScreen = ({route}) => {
         </View>
         <View style={styles.mainss}>
           <View style={styles.screen1}>
-            <View style={styles.vimage}>
-              <Image
-                source={require('../assets/images/man.png')}
+            <View style={styles.leftv}>
+              <View style={styles.vimage}>
+                <Image
+                  source={require('../assets/images/man.png')}
+                  style={{
+                    resizeMode: 'contain',
+                    width: 120,
+                    height: 120,
+                  }}
+                />
+              </View>
+              <View
                 style={{
-                  resizeMode: 'contain',
-                  width: 100,
-                  height: 100,
-                }}
-              />
+                  position: 'absolute',
+                  backgroundColor: 'red',
+                  justifyContent: 'flex-start',
+                  alignItems: 'flex-end',
+                  left: 0,
+                  bottom: 0,
+                }}></View>
+            </View>
+            <View style={styles.rightv}>
+              <View
+                style={{
+                  backgroundColor: 'gray',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 25,
+                  borderColor: 'black',
+                  borderWidth: 2,
+                  top: 0,
+                }}>
+                <Text style={{...styles.protext, color: 'white'}}>
+                  M.No:{'   '}
+                  <Text style={{...styles.protext, color: 'white'}}>
+                    {result.membershipno}
+                  </Text>
+                </Text>
+              </View>
+              <ProfileUi icon="user" lable={result.fullname} />
+              <ProfileUi icon="user" lable={result.email} />
+              <ProfileUi icon="user" lable={result.address} />
+              <ProfileUi icon="user" lable={result.mobile} />
+              <ProfileUi icon="user" lable={result.membershiptype} />
+              <ProfileUi icon="user" lable={result.membershipno} />
             </View>
           </View>
           <View style={styles.screen2}>
-            <Text style={styles.text}> Member Detail </Text>
-            <View style={styles.mbview}>
-              <Text style={styles.labletext}>Full Name :</Text>
-              <Text style={styles.userdetail}>{result.fullname} </Text>
-            </View>
-            <View style={styles.mbview}>
-              <Text style={styles.labletext}>Address :</Text>
-              <Text style={styles.userdetail}>{result.address}</Text>
-            </View>
-            <View style={styles.mbview}>
-              <Text style={styles.labletext}>Mobile No :</Text>
-              <Text style={styles.userdetail}> {result.mobile}</Text>
-            </View>
-            <View style={styles.mbview}>
-              <Text style={styles.labletext}>Email :</Text>
-              <Text style={styles.userdetail}> {result.email}</Text>
-            </View>
+            <Text>Down</Text>
           </View>
         </View>
       </ImageBackground>
@@ -91,36 +112,38 @@ const styles = StyleSheet.create({
     flex: 10,
   },
   vimage: {
-    width: 120,
-    height: 110,
-    borderColor: 'red',
-    borderWidth: 2,
-    borderRadius: 25,
-    backgroundColor: 'white',
-  },
-  text: {
-    color: 'black',
-    fontSize: 30,
-    fontFamily: 'Oxygen-Light',
+    width: 140,
+    height: 140,
+    borderColor: 'black',
+    borderWidth: 3,
+    borderRadius: 100,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
   },
   screen1: {
-    flex: 2,
-    overflow: 'hidden',
+    flex: 1,
+    flexDirection: 'row',
+  },
+  leftv: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  rightv: {
+    flex: 1,
+    backgroundColor: 'white',
+    flexDirection: 'column',
+  },
   screen2: {
-    flex: 3,
-    padding: 10,
+    flex: 2,
+    backgroundColor: 'gray',
   },
-  mbview: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  protext: {
+    fontSize: 20,
+    color: 'black',
+    fontFamily: 'Girassol-Regular',
   },
-  screen3: {
-    flex: 3,
-  },
-  labletext: {fontFamily: 'Oxygen-Bold', fontSize: 20},
-  userdetail: {fontFamily: 'Oxygen-Light', fontSize: 20},
 });
 export default ProfileScreen;
