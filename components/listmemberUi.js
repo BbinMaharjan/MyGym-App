@@ -1,6 +1,7 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {View, Text, StyleSheet, Image} from 'react-native';
+import color from '../constant/color';
 
 const MemberUi = props => {
   return (
@@ -9,7 +10,7 @@ const MemberUi = props => {
         <View style={styles.imagess}>
           <Image
             style={styles.image}
-            source={require('../assets/images/gymzs.png')}
+            source={require('../assets/images/man.png')}
           />
         </View>
         <View style={styles.textss}>
@@ -42,20 +43,22 @@ const styles = StyleSheet.create({
     height: 100,
     marginBottom: 3,
     padding: 2,
-    backgroundColor: 'skyblue',
+    backgroundColor: color.lightesGray,
     flexDirection: 'row',
     borderRadius: 20,
-    borderColor: 'yellow',
+    borderColor: 'red',
     borderRightWidth: 3,
     borderBottomWidth: 3,
   },
   imagess: {
     flex: 1,
     margin: 3,
-    borderRadius: 20,
+    borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'gray',
+    borderColor: 'black',
+    borderWidth: 2,
+    overflow: 'hidden',
   },
   image: {
     height: '100%',
@@ -77,9 +80,12 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   text: {
-    fontFamily: 'Oxygen-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Oxygen-Bold',
+    color: 'gray',
   },
-  texti: {},
+  texti: {
+    fontFamily: 'Oxygen-Light',
+    color: 'gray',
+  },
 });
 export {MemberUi};

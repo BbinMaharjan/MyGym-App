@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import {View, Text, StyleSheet, Image, ImageBackground} from 'react-native';
 import {NavHeading} from '../components/Ui';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {getOneMembers} from '../store/actions/members';
-import ProfileUi from '../components/profileUi';
+import {PaymentList, ProfileUi} from '../components/profileUi';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const ProfileScreen = ({route}) => {
   const {
@@ -51,44 +52,64 @@ const ProfileScreen = ({route}) => {
                   }}
                 />
               </View>
-              <View
-                style={{
-                  position: 'absolute',
-                  backgroundColor: 'red',
-                  justifyContent: 'flex-start',
-                  alignItems: 'flex-end',
-                  left: 0,
-                  bottom: 0,
-                }}></View>
             </View>
             <View style={styles.rightv}>
               <View
                 style={{
-                  backgroundColor: 'gray',
                   justifyContent: 'center',
                   alignItems: 'center',
                   borderRadius: 25,
-                  borderColor: 'black',
-                  borderWidth: 2,
+                  borderColor: 'green',
+                  borderWidth: 1,
                   top: 0,
+                  backgroundColor: 'white',
                 }}>
-                <Text style={{...styles.protext, color: 'white'}}>
-                  M.No:{'   '}
-                  <Text style={{...styles.protext, color: 'white'}}>
+                <Text style={{...styles.protext, color: 'green'}}>
+                  Membership No:{' '}
+                  <Text style={{...styles.protext, color: 'black'}}>
                     {result.membershipno}
                   </Text>
                 </Text>
               </View>
-              <ProfileUi icon="user" lable={result.fullname} />
-              <ProfileUi icon="user" lable={result.email} />
-              <ProfileUi icon="user" lable={result.address} />
-              <ProfileUi icon="user" lable={result.mobile} />
-              <ProfileUi icon="user" lable={result.membershiptype} />
-              <ProfileUi icon="user" lable={result.membershipno} />
+              <ProfileUi icon="id-card" lable={result.fullname} />
+              <ProfileUi icon="envelope" lable={result.email} />
+              <ProfileUi icon="home" lable={result.address} />
+              <ProfileUi icon="phone" lable={result.mobile} />
+              <ProfileUi icon="calendar" lable={result.membershiptype} />
             </View>
           </View>
           <View style={styles.screen2}>
-            <Text>Down</Text>
+            <View
+              style={{
+                padding: 1,
+                resizeMode: 'cover',
+                borderRadius: 10,
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                borderColor: 'green',
+                borderWidth: 1,
+                flexDirection: 'row',
+                top: 1,
+                position: 'absolute',
+                backgroundColor: 'white',
+              }}>
+              <Icon name="history" size={25} color="red" />
+              <Text style={{...styles.protext, color: 'green'}}>
+                {' '}
+                Payment Detail{' '}
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.screen3}>
+            <ScrollView>
+              <PaymentList date="01" month="January" amount="1000" />
+              <PaymentList date="01" month="February" amount="1000" />
+              <PaymentList date="01" month="March" amount="1000" />
+              <PaymentList date="01" month="April" amount="1000" />
+              <PaymentList date="01" month="May" amount="1000" />
+              <PaymentList date="01" month="May" amount="1000" />
+            </ScrollView>
           </View>
         </View>
       </ImageBackground>
@@ -112,8 +133,8 @@ const styles = StyleSheet.create({
     flex: 10,
   },
   vimage: {
-    width: 140,
-    height: 140,
+    width: 160,
+    height: 160,
     borderColor: 'black',
     borderWidth: 3,
     borderRadius: 100,
@@ -123,7 +144,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   screen1: {
-    flex: 1,
+    flex: 5,
     flexDirection: 'row',
   },
   leftv: {
@@ -133,12 +154,19 @@ const styles = StyleSheet.create({
   },
   rightv: {
     flex: 1,
-    backgroundColor: 'white',
     flexDirection: 'column',
+    bottom: 0,
+    top: 3,
+    overflow: 'hidden',
   },
   screen2: {
-    flex: 2,
-    backgroundColor: 'gray',
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  screen3: {
+    flex: 9,
+    padding: 5,
   },
   protext: {
     fontSize: 20,
